@@ -7,8 +7,8 @@ const bodyParser = require('body-parser')
 dbConnect()
 
 // Import routes
-const userRouter = require('./src/routes/location.routs')
-
+const locationRoute = require('./src/routes/location.routs')
+const deviceRoute = require('./src/routes/device.route')
 app = express()
 
 app.use(cors())
@@ -20,7 +20,8 @@ app.get('/', (req, res) => {
 })
 
 // Define routes for notes
-app.use('/api/location', userRouter)
+app.use('/api/location', locationRoute)
+app.use('/api/device', deviceRoute)
 
 
 const PORT = process.env.PORT

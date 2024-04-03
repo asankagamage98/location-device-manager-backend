@@ -13,6 +13,7 @@ const deviceSchema = new Schema(
     },
     image: {
       type: String,
+      required: true,
     },
     status: {
       type: String,
@@ -24,5 +25,5 @@ const deviceSchema = new Schema(
     timestamps: true,
   }
 );
-const device = mongoose.model("News", deviceSchema);
-module.exports = device;
+const Device = mongoose.model("Device", deviceSchema);
+module.exports = Device;

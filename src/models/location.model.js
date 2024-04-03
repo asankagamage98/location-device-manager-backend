@@ -8,17 +8,18 @@ const locationSchema = new Schema(
     },
     address: {
       type: String,
-      required: true,
     },
     phone: {
       type: String,
     },
-
-    devices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Device" }],
+    devices: [{ 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "Device",
+    }],
   },
   {
     timestamps: true,
   }
 );
-const Location = mongoose.model("News", locationSchema);
+const Location = mongoose.model("Location", locationSchema);
 module.exports = Location;
