@@ -40,9 +40,20 @@ const remove = (id) => {
   const result = Device.findByIdAndDelete(id);
   return result;
 };
+const getAll = async ({ search, limit, offset }) => {
+  const locations = await Device.find();
+  return locations;
+};
+
+const getSingle = async (id) => {
+  const location = await Device.findById(id);
+  return location;
+};
 
 module.exports = {
   create,
   update,
   remove,
+  getAll,
+  getSingle,
 };

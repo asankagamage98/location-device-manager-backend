@@ -13,7 +13,7 @@ app = express()
 
 app.use(cors())
 
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '50mb'}))
 
 app.get('/', (req, res) => {
     res.send('Asanka Gamage - location management Application Service working')
