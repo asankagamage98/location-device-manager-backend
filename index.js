@@ -19,7 +19,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 
 // Define a route for the root URL
 app.get("/", (req, res) => {
-  res.send("Asanka Gamage - location management Application Service working");
+  res.send("Asanka Gamage - device management Application Service working");
 });
 
 // Define routes
