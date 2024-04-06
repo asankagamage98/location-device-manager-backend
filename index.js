@@ -1,31 +1,34 @@
-require('dotenv').config()
-const express = require('express')
-const cors = require('cors')
-const { dbConnect } = require('./src/utils/dbConnection')
-const bodyParser = require('body-parser')
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const { dbConnect } = require("./src/utils/dbConnection");
+const bodyParser = require("body-parser");
 
-dbConnect()
+dbConnect();
 
 // Import routes
-const locationRoute = require('./src/routes/location.routs')
-const deviceRoute = require('./src/routes/device.route')
-app = express()
+const locationRoute = require("./src/routes/location.routs");
+const deviceRoute = require("./src/routes/device.route");
 
-app.use(cors())
+app = express();
 
-app.use(bodyParser.json({limit: '50mb'}))
+app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('Asanka Gamage - location management Application Service working')
-})
+// Parse JSON bodies with a limit of 50mb
+app.use(bodyParser.json({ limit: "50mb" }));
 
-// Define routes for notes
-app.use('/api/location', locationRoute)
-app.use('/api/device', deviceRoute)
+// Define a route for the root URL
+app.get("/", (req, res) => {
+  res.send("Asanka Gamage - location management Application Service working");
+});
 
+// Define routes
+app.use("/api/location", locationRoute);
+app.use("/api/device", deviceRoute);
 
-const PORT = process.env.PORT
+//get port env
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-    console.info(`Backend running on http://localhost:${PORT}`)
-})
+  console.info(`Backend running on http://localhost:${PORT}`);
+});

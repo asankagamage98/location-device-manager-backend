@@ -1,6 +1,5 @@
 const Location = require("../models/location.model");
 
-//create location
 const create = async (data) => {
   const location = new Location({
     name: data.name,
@@ -32,7 +31,6 @@ const remove = async (id) => {
   return location;
 };
 
-// functions for use in other files
 module.exports = {
   create,
   getAll,

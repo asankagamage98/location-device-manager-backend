@@ -2,6 +2,7 @@ const { getAll, create, update, remove, getSingle } = require('../controllers/lo
 
 const router = require('express').Router()
 
+// defined location routes
 router.post('/', create)
 router.put('/:id', update)
 router.delete('/:id', remove)

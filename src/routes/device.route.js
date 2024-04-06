@@ -2,6 +2,7 @@ const { create, update, remove, getSingle, getAll } = require('../controllers/de
 
 const router = require('express').Router()
 
+// defined device routes
 router.post('/', create)
 router.put('/:id', update)
 router.delete('/:id', remove)

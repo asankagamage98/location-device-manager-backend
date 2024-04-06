@@ -10,6 +10,7 @@ const create = async (req, res) => {
   }
 };
 
+//get all locations
 const getAll = async (req, res) => {
   try {
     const result = await LocationService.getAll(req.body);
@@ -19,6 +20,7 @@ const getAll = async (req, res) => {
   }
 };
 
+//get single location by id
 const getSingle = async (req, res) => {
   try {
     const result = await LocationService.getSingle(req?.params?.id);
@@ -28,6 +30,7 @@ const getSingle = async (req, res) => {
   }
 };
 
+// update location
 const update = async (req, res) => {
   try {
     const result = await LocationService.update(req?.params?.id, req.body);
@@ -37,6 +40,7 @@ const update = async (req, res) => {
   }
 };
 
+// remove location
 const remove = async (req, res) => {
   try {
     const result = await LocationService.remove(req?.params?.id);

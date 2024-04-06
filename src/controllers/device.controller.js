@@ -1,5 +1,6 @@
 const DeviceService = require("../services/device.sevice");
 
+//create news device
 const create = async (req, res) => {
   try {
     const result = await DeviceService.create(req.body);
@@ -9,6 +10,7 @@ const create = async (req, res) => {
   }
 };
 
+//update device
 const update = async (req, res) => {
   try {
     const result = await DeviceService.update(req.params.id, req.body);
@@ -18,15 +20,17 @@ const update = async (req, res) => {
   }
 };
 
+//remove device
 const remove = async (req, res) => {
-    try {
-        const result = await DeviceService.remove(req.params.id);
-        res.status(200).json(result);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
+  try {
+    const result = await DeviceService.remove(req.params.id);
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 };
 
+//get all devices
 const getAll = async (req, res) => {
   try {
     const result = await DeviceService.getAll(req.body);
@@ -36,6 +40,7 @@ const getAll = async (req, res) => {
   }
 };
 
+//get single device
 const getSingle = async (req, res) => {
   try {
     const result = await DeviceService.getSingle(req?.params?.id);
@@ -46,9 +51,9 @@ const getSingle = async (req, res) => {
 };
 
 module.exports = {
-    create,
-    update,
-    remove,
-    getAll,
-    getSingle
-}
+  create,
+  update,
+  remove,
+  getAll,
+  getSingle,
+};

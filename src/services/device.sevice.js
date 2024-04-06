@@ -60,7 +60,9 @@ const update = async (id, data) => {
     const updatedDevice = await device.save();
 
     // Remove the device ID from the old location's devices array
-    const oldLocation = await Location.findOne({ devices: { $in: [device?._id] } });
+    const oldLocation = await Location.findOne({
+      devices: { $in: [device?._id] },
+    });
     if (oldLocation) {
       oldLocation.devices.pull(device._id);
       await oldLocation.save();
