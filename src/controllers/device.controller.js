@@ -1,6 +1,6 @@
 const DeviceService = require("../services/device.sevice");
 
-//create news device
+//create new device
 const create = async (req, res) => {
   try {
     const result = await DeviceService.create(req.body);
